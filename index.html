@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>暗人豆腐：まどドラ・PC 公式サイト</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
+    header {
+      background: url("img/header.png") center / cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    }
+    header p {
+      margin-top: 12px;
+      opacity: 0.95;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+    nav {
+      background: #181818;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      border-left: 4px solid #ff0000;
+      padding-left: 10px;
+    }
+    .video {
+      margin-top: 20px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff0000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #cc0000;
+    }
+  </style>
+<script>
+  // スムーズスクロール
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // 年号を自動更新
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ヘッダーにスクロール演出
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.style.filter = window.scrollY > 50 ? 'brightness(0.85)' : 'brightness(1)';
+    });
+  });
+</script>
+<link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+
+<header>
+  <h1>暗人豆腐：まどドラ・PC</h1>
+  <p>まどドラとプログラミングで遊ぶチャンネル</p>
+  <a class="btn" href="https://www.youtube.com/@DarkmanTofu" target="_blank">チャンネルを見る</a>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#content">Content</a>
+</nav>
+
+<section id="about">
+  <h2>このチャンネルについて</h2>
+  <p>
+    主に <strong>まどドラ</strong> と <strong>パソコン関係</strong> の動画を投稿していく予定です。<br>
+    まどドラは一応 <strong>糸車の魔女 Nightmare まで</strong> までクリア済み。<br>
+    パソコン系では、主に <strong>プログラミングで遊ぶ</strong> 内容が中心になります。<br>
+    時間に余裕があれば、じっくり進める <strong>開発シリーズ</strong> も作っていきたいですねー。
+  </p>
+</section>
+
+
+
+<section id="content">
+  <h2>主なコンテンツ</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>💻 プログラミング</h3>
+      <p>Java / Python / Rust などを分かりやすく解説。</p>
+    </div>
+    <div class="card">
+      <h3>🧠 解説・考察</h3>
+      <p>仕組み解説や技術系の話題も扱います。</p>
+    </div>
+  </div>
+    <div style="margin-top:40px;">
+    <h3>使用・関連言語</h3>
+    <div class="cards">
+ <a class="card" href="https://www.oracle.com/java/" target="_blank">
+        <h4>Java</h4>
+        <p>安定性が高く、実験から実用まで幅広く使える言語</p>
+      </a>
+      <a class="card" href="https://www.iso.org/standard/74528.html" target="_blank">
+        <h4>C</h4>
+        <p>低レイヤー理解のための基本となる言語</p>
+      </a>
+      <a class="card" href="https://www.rust-lang.org/" target="_blank">
+        <h4>Rust</h4>
+        <p>安全性とパフォーマンスを両立したモダンな言語</p>
+      </a>
+      <a class="card" href="https://www.python.org/" target="_blank">
+        <h4>Python</h4>
+        <p>試作や自動化に強く、アイデアをすぐ形にできる言語</p>
+      </a>
+      <a class="card" href="https://www.kernel.org/" target="_blank">
+        <h4>Linux</h4>
+        <p>開発・検証・運用まで支えるオープンなOS環境</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> 暗人豆腐 · Official Site</footer>
+
+</body>
+</html>
